@@ -14,7 +14,7 @@ These packages were released:
 
 Version of package(s) in repository `qb_device`:
 
-- upstream repository: ssh://git@bitbucket.org/qbrobotics/qbdevice-ros.git
+- upstream repository: https://bitbucket.org/qbrobotics/qbdevice-ros.git
 - release repository: unknown
 - rosdistro version: `null`
 - old version: `null`
