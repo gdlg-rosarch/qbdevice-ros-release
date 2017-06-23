@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
-project(qb_device_control VERSION 1.0.1 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
+project(qb_device_control VERSION 1.0.6 LANGUAGES CXX)
 
 # Dependency Settings
 find_package(catkin REQUIRED
@@ -19,7 +19,7 @@ catkin_package(
   INCLUDE_DIRS
     include
   LIBRARIES
-    lib${PROJECT_NAME}
+    ${PROJECT_NAME}
   CATKIN_DEPENDS
     roscpp
     actionlib
@@ -29,29 +29,46 @@ catkin_package(
 )
 
 # Exported libraries
-add_library(lib${PROJECT_NAME}
+add_library(${PROJECT_NAME}
   src/qb_device_control.cpp
 )
 
-add_dependencies(lib${PROJECT_NAME}
+add_dependencies(${PROJECT_NAME}
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
   ${catkin_EXPORTED_TARGETS}
-)
-
-set_target_properties(lib${PROJECT_NAME}
-  PROPERTIES
-    OUTPUT_NAME ${PROJECT_NAME}  # avoid "liblib" name
 )
 
 # C++ Settings
 set_property(
   TARGET
-    lib${PROJECT_NAME}
+    ${PROJECT_NAME}
   PROPERTY CXX_STANDARD 14
 )
 
 set_property(
   TARGET
-    lib${PROJECT_NAME}
+    ${PROJECT_NAME}
   PROPERTY CXX_STANDARD_REQUIRED ON
+)
+
+# Installation
+install(
+  TARGETS ${PROJECT_NAME}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
+)
+
+install(
+  DIRECTORY
+    include/${PROJECT_NAME}/
+  DESTINATION
+    ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+install(
+  DIRECTORY
+    launch/
+  DESTINATION
+    ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
