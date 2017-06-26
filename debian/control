@@ -1,0 +1,12 @@
+Source: ros-kinetic-qb-device-srvs
+Section: misc
+Priority: extra
+Maintainer: Alessandro Tondo <alessandro.tondo@qbrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin, ros-kinetic-message-generation, ros-kinetic-qb-device-msgs, ros-kinetic-std-srvs
+Homepage: http://wiki.ros.org/qb_device_srvs
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-qb-device-srvs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-message-runtime, ros-kinetic-qb-device-msgs, ros-kinetic-std-srvs
+Description: This package contains the device-independent custom ROS services for qbrobotics® devices.
