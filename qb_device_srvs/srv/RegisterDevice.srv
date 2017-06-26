@@ -1,8 +1,0 @@
-# request
-int32 id
-bool activate
----
-# response
-bool success
-string message
-qb_device_msgs/Info info
