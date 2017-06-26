@@ -1,6 +1,0 @@
-# request
-int32 id
-int16[] commands
----
-# response
-bool success
