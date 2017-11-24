@@ -1,0 +1,12 @@
+Source: ros-kinetic-qb-device
+Section: misc
+Priority: extra
+Maintainer: Alessandro Tondo <alessandro.tondo@qbrobotics.com>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin
+Homepage: http://wiki.ros.org/qb_device
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-qb-device
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-qb-device-bringup, ros-kinetic-qb-device-control, ros-kinetic-qb-device-description, ros-kinetic-qb-device-driver, ros-kinetic-qb-device-hardware-interface, ros-kinetic-qb-device-msgs, ros-kinetic-qb-device-srvs
+Description: This package contains a device-independent ROS interface for qbrobotics® devices.
